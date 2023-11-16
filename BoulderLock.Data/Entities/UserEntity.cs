@@ -18,7 +18,7 @@ namespace BoulderLock.Data.Entities
         [Required]
         public string Username { get; set; }
         [Required]
-        public string loginPass { get; set; }        
+        public string loginPass { get; set; }   
         public string FirstName { get; set; }     
         public string LastName { get; set; }
         [Required]
