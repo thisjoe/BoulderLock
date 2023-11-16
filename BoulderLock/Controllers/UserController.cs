@@ -35,5 +35,12 @@ namespace BoulderLock.Controllers
 
             return BadRequest("User could not be registered.");
         }
+
+        [HttpGet("GetUser")]
+        public async Task<IActionResult> GetUser()
+        {
+            var GetUser = await _service.GetUserAsync();
+            return Ok(User);
+        }
     }
 }
