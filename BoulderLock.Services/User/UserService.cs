@@ -2,6 +2,7 @@ using BoulderLock.Data;
 using BoulderLock.Data.Entities;
 using BoulderLock.Models;
 using BoulderLock.Models.User;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -24,9 +25,12 @@ namespace BoulderLock.Services.User
                 accountId = model.Acc_Id,
                 Email = model.Email,
                 Username = model.Username,
-                Role = model.Role,
-                loginPass = model.Password
+                Role = model.Role
             };
+
+            var passwordHasher = new PasswordHasher<UserEntity>();
+
+            entity.loginPass = passwordHasher.HashPassword(entity, model.Password);
 
             _context.Users.Add(entity);
             var numberOfChanges = await _context.SaveChangesAsync();
