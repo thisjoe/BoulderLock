@@ -32,7 +32,7 @@ namespace BoulderLock.Data
             modelBuilder.Entity<PassStorEntity>()
                 .HasOne(n => n.Owner)
                 .WithMany(p => p.Passes)
-                .HasForeignKey(n => n.OwnerId);
+                .HasForeignKey(n => n.userId);
         }
     }    
 }

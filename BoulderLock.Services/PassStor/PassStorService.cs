@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BoulderLock.Services.PassStor
 {
-    internal class PassStor
+    public class PassStorService : IPassStorService
     {
+
     }
 }

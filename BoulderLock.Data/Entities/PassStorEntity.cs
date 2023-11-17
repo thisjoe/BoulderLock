@@ -13,12 +13,13 @@ namespace BoulderLock.Data.Entities
         [Key]
         public int Id { get; set; }
         [Required]
+        [ForeignKey("Owner")]
+        public int userId { get; set; }
+        public virtual UserEntity Owner { get; set; }
+        [Required]
         public string webSite { get; set; }
         [Required]
         public string webPassword { get; set; }
         public string webType {  get; set; }
-        [Required]
-        [ForeignKey("UserEntity")]
-        public int userId { get; set; }
     }
 }

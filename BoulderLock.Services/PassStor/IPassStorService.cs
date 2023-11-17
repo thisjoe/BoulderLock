@@ -8,10 +8,11 @@ namespace BoulderLock.Services.PassStor
 {
     public interface IPassStorService
     {
-        Task<bool> CreatePassAsync(PassCreate request);
+        /*Task<bool> CreatePassAsync(PassCreate request);
         Task<IEnumerable<PassListItem>> GetAllPassesAsync();
         Task<PassDetail> GetPassByIdAsync(int noteId);
         Task<bool> UpdatePassAsync(PassUpdate request);
-        Task<bool> DeletePassAsync(int noteId);
+        Task<bool> DeletePassAsync(int noteId);*/
     }
 }
+        
