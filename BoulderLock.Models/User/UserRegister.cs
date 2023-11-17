@@ -9,28 +9,25 @@ namespace BoulderLock.Models.User
     public class UserRegister
     {
         [Required]
-        public int Id { get; set; }
+        public int accountId { get; set; }
 
-        [Required]
-        public int Acc_Id { get; set; }
-
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
         public string? Email { get; set; }
 
-        [Required]
-        [MinLength(4)]
+        [Required(ErrorMessage = "Username is required")]
+        [MinLength(4, ErrorMessage = "Username must be at least 4 characters long")]
         public string? Username { get; set; }
 
-        [Required]
-        public string? Role { get; set; }
+        //[Required]
+        //public string? Role { get; set; }
 
         [Required]
-        [MinLength(4)]
+        [MinLength(4, ErrorMessage = "Password must be at least 4 characters long")]
         public string? Password { get; set; }
 
-        [Required]
-        [Compare(nameof(Password))]
+        [Required(ErrorMessage = "Confirm password is required")]
+        [Compare(nameof(Password), ErrorMessage = "Passwords do not match")]
         public string? ConfirmPassword { get; set; }
     }
 }

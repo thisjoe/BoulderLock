@@ -15,5 +15,6 @@ namespace BoulderLock.Data.Entities
         public string AccountType { get; set; }
         [Required]
         public bool IsActive { get; set; }
+        public virtual ICollection<UserAccount> UserAccounts { get; set;  }
     }
 }

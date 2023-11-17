@@ -18,17 +18,17 @@ namespace BoulderLock.Data.Entities
         [Required]
         public string Username { get; set; }
         [Required]
-        public string loginPass { get; set; }   
+        public string loginPass { get; set; }
         public string FirstName { get; set; }     
         public string LastName { get; set; }
+        //[Required]
+        //public string Role { get; set; }
         [Required]
-        public string Role { get; set; }
-        [Required]
-        public DateTime CreatedDate { get; set; }
+        public DateTime DateCreated { get; set; }
         [Required]
         public bool IsActive { get; set; }
-        [Required]
-        [ForeignKey("AccountEntity")]
-        public int accountId { get; set; }
+        public virtual ICollection<UserAccount> UserAccounts { get; set; }
+        public List<PassStorEntity> Passes { get; set; }
+
     }
 }
